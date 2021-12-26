@@ -1,4 +1,4 @@
-export interface CharacterData {
+export interface Character {
   age: string;
   gender: string;
   homePlanet: string;
