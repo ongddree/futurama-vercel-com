@@ -11,8 +11,6 @@ const Home: NextPage = () => {
     fetcher
   );
 
-  console.log(data[0]);
-
   if (error) return <div>An error has occurred.</div>;
   if (!data) return <div>Loading...</div>;
 
