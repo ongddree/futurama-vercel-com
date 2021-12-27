@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
-import { Error, Loading, CharacterCard } from ".";
+import { Error, Loading, CastCard } from ".";
 import { useData } from "../hooks/useData";
-import { CharacterType } from "../types/CharacterType";
+import { CastType } from "../types/CastType";
 
 interface ContainerProps {
   subject: string;
 }
 
-export const CharacterCardContainer = ({ subject }: ContainerProps) => {
+export const CastCardContainer = ({ subject }: ContainerProps) => {
   const { data, error } = useData(subject);
 
   if (error) return <Error />;
@@ -15,13 +15,8 @@ export const CharacterCardContainer = ({ subject }: ContainerProps) => {
 
   return (
     <Container>
-      {data.map((character: CharacterType) => {
-        return (
-          <CharacterCard
-            characterData={character}
-            key={`character-${character.id}`}
-          ></CharacterCard>
-        );
+      {data.map((cast: CastType) => {
+        return <CastCard castData={cast} key={`cast-${cast.id}`}></CastCard>;
       })}
     </Container>
   );

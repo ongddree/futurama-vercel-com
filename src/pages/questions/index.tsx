@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
+import { QuestionCardContainer } from "../../components/QuestionCardContainer";
 
-const QuestionsIndexPage: NextPage = () => {
-  return <div>QuestionsIndexPage</div>;
+const QuestionIndexPage: NextPage = () => {
+  const subject = "questions";
+  return (
+    <div>
+      <QuestionCardContainer subject={subject} />
+    </div>
+  );
 };
 
-export default QuestionsIndexPage;
+export default QuestionIndexPage;

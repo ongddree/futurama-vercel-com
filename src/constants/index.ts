@@ -23,8 +23,8 @@ export const ROUTES = [
   },
   {
     ID: 4,
-    PATH: "/qustions",
-    LABEL: "qustions",
+    PATH: "/questions",
+    LABEL: "questions",
   },
   {
     ID: 5,

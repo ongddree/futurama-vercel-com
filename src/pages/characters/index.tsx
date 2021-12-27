@@ -2,9 +2,10 @@ import type { NextPage } from "next";
 import { CharacterCardContainer } from "../../components/CharacterCardContainer";
 
 const CharacterIndexPage: NextPage = () => {
+  const subject = "characters";
   return (
     <div>
-      <CharacterCardContainer />
+      <CharacterCardContainer subject={subject} />
     </div>
   );
 };

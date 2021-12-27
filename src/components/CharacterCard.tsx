@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { Character } from "../types/characters";
+import { CharacterType } from "../types/CharacterType";
 
 interface CharacterCardProps {
-  characterData: Character;
+  characterData: CharacterType;
 }
 
 export const CharacterCard = ({ characterData }: CharacterCardProps) => {
@@ -33,12 +33,6 @@ export const CharacterCard = ({ characterData }: CharacterCardProps) => {
     </Card>
   );
 };
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-`;
 
 const Card = styled.div`
   max-width: 360px;
