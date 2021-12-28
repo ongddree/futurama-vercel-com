@@ -11,17 +11,27 @@ export const InventoryCard = ({ inventoryData }: InventoryCardProps) => {
 
   return (
     <Card key={`inventory-${id}`}>
-      <p>{title}</p>
-      <p>{category}</p>
-      <p>{description}</p>
-      <p>{slogan}</p>
-      <p>{price}</p>
-      <p>{stock}</p>
-      <p>{id}</p>
+      <p>title : {title}</p>
+      <p>category: {category}</p>
+      <p>description: {description}</p>
+      <p>slogan: {slogan}</p>
+      <p>price: {price}</p>
+      <p>stock: {stock}</p>
     </Card>
   );
 };
 
 const Card = styled.div`
-  max-width: 360px;
+  padding: 30px;
+  word-break: break-all;
+  background: #fc9918;
+  border-radius: 20px;
+  filter: grayscale(90%);
+  position: relative;
+
+  &:hover {
+    filter: grayscale(0%);
+    transition-property: grayscale;
+    transition: ease-in-out all 0.5s;
+  }
 `;

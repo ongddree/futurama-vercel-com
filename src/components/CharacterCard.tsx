@@ -47,8 +47,6 @@ const typing = keyframes`
 // animation: ${typing} 3s steps(51);
 
 const Card = styled.div`
-  min-width: 250px;
-  max-width: 300px;
   padding: 30px;
   word-break: break-all;
   background: #fc9918;

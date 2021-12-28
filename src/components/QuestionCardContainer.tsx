@@ -70,9 +70,8 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 20px;
   place-items: center;
-  min-height: 100vh;
+  margin-top: 100px;
 `;
 
 const Card = styled.div`
@@ -84,6 +83,7 @@ const Card = styled.div`
   font-weight: 500;
   background: #fc9918;
   max-width: 340px;
+  border-radius: 20px;
 
   header {
     padding: 0;

@@ -21,5 +21,16 @@ export const EpisodeCard = ({ episodeData }: EpisodeCardProps) => {
 };
 
 const Card = styled.div`
-  max-width: 360px;
+  padding: 30px;
+  word-break: break-all;
+  background: #fc9918;
+  border-radius: 20px;
+  filter: grayscale(90%);
+  position: relative;
+
+  &:hover {
+    filter: grayscale(0%);
+    transition-property: grayscale;
+    transition: ease-in-out all 0.5s;
+  }
 `;

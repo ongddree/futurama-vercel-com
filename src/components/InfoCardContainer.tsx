@@ -24,6 +24,7 @@ export const InfoCardContainer = ({ subject }: ContainerProps) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  padding: 50px;
+  width: 790px;
+  margin: 0 auto;
 `;

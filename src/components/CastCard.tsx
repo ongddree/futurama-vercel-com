@@ -15,17 +15,21 @@ export const CastCard = ({ castData }: CastCardProps) => {
       <p>{died}</p>
       <p>{bio.text}</p>
       <p>{bio.url}</p>
-      <p>{id}</p>
     </Card>
   );
 };
 
 const Card = styled.div`
-  max-width: 360px;
-`;
+  padding: 30px;
+  word-break: break-all;
+  background: #fc9918;
+  border-radius: 20px;
+  filter: grayscale(90%);
+  position: relative;
 
-const Profile = styled.img`
-  width: 100%;
-  aspect-ratio: 9/16;
-  object-fit: contain;
+  &:hover {
+    filter: grayscale(0%);
+    transition-property: grayscale;
+    transition: ease-in-out all 0.5s;
+  }
 `;

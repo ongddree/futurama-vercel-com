@@ -46,15 +46,13 @@ const boxFade = keyframes`
 
 const Navlist = styled.ul`
   display: flex;
-  margin: 20px;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
   padding: 40px 0;
   list-style: none;
-  height: 100vh;
   animation: ${boxFade} 3s;
+  margin: 0;
 `;
 
 const Linkbtn = styled.a`
@@ -65,7 +63,7 @@ const Linkbtn = styled.a`
   border-radius: 10px;
   color: #370665;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
 
   &:hover {
@@ -74,7 +72,8 @@ const Linkbtn = styled.a`
 `;
 
 const Logo = styled.img`
+  display: block;
   width: 100px;
   height: 100px;
-  margin-bottom: 20px;
+  margin-right: 20px;
 `;

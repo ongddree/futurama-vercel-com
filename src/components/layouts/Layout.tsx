@@ -14,10 +14,9 @@ export const Layout: React.FC = ({ children }) => {
 
 const Wrap = styled.div`
   background: #f14a16;
-  display: flex;
+  min-height: 100vh;
 `;
 
 const Main = styled.div`
-  // min-width: 100vw;
   width: calc(100% - 80px);
 `;
