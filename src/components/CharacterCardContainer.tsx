@@ -29,6 +29,10 @@ export const CharacterCardContainer = ({ subject }: ContainerProps) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 50px;
+  grid-template-columns: 250px 250px 250px;
+  // grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  width: 790px;
+  margin: 0 auto;
 `;
