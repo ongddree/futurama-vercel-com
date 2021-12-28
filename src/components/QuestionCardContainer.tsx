@@ -18,8 +18,8 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
 
   const { id, question, possibleAnswers, correctAnswer } = data;
 
-  const handleClick = (e) => {
-    const answer = e.target.value;
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const answer = (e.target as HTMLInputElement).value;
     if (answer === `${data[current].correctAnswer}`) {
       alert("🥳정답입니다🥳");
       setCurrent((current) => current + 1);
