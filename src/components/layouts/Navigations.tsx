@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ROUTES } from "../../constants";
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
-import logo from "../../assets/futurama_logo.png";
 
 interface ROUTE {
   ID: number;
@@ -17,7 +15,7 @@ export const Navigation = () => {
         <Navlist>
           <Link href="/" passHref>
             <a>
-              <Logo src={logo.src}></Logo>
+              <Logo src="assets/futurama_logo.png"></Logo>
             </a>
           </Link>
           {ROUTES.map((routeObject: ROUTE) => {
@@ -35,45 +33,71 @@ export const Navigation = () => {
   );
 };
 
-const boxFade = keyframes`
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-`;
-
 const Navlist = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  padding: 40px 0;
+  gap: 10px;
+  padding: 10px 0;
   list-style: none;
-  animation: ${boxFade} 3s;
   margin: 0;
+  color: #442f73;
 `;
 
 const Linkbtn = styled.a`
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  width: 150px;
-  border-radius: 10px;
-  color: #370665;
+  padding: 15px 7px;
+  color: #fff;
   font-weight: 700;
   font-size: 20px;
   text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  transition: ease-in-out 0.3s;
 
   &:hover {
-    background: #fc9918;
+    color: #9440de;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #9440de;
+    display: block;
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+  }
+
+  &:hover::before {
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
   }
 `;
 
 const Logo = styled.img`
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   margin-right: 20px;
+  filter: hue-rotate(90deg);
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    filter: hue-rotate(280deg);
+  }
 `;
