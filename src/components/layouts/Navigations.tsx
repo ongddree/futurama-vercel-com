@@ -40,7 +40,7 @@ const Navlist = styled.ul`
   gap: 10px;
   padding: 10px 0;
   list-style: none;
-  margin: 0;
+  margin: 0 0 30px 0;
   color: #442f73;
 `;
 
