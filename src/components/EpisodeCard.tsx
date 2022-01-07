@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import { EpisodeType } from "../types/EpisodeType";
+import Link from "next/link";
+import { SEARCH_ENDPOINT } from "../constants";
 
 interface EpisodeCardProps {
   episodeData: EpisodeType;
@@ -8,29 +10,48 @@ interface EpisodeCardProps {
 export const EpisodeCard = ({ episodeData }: EpisodeCardProps) => {
   const { number, title, writers, originalAirDate, desc, id } = episodeData;
 
+  const queryTitle = title.replaceAll(" ", "+");
+
   return (
-    <Card key={`episode-${id}`}>
-      <p>{number}</p>
-      <p>{title}</p>
-      <p>{writers}</p>
-      <p>{originalAirDate}</p>
-      <p>{desc}</p>
-      <p>{id}</p>
-    </Card>
+    <>
+      <Card key={`episode-${id}`}>
+        <td>{number}</td>
+        <td>{title}</td>
+        <td>{writers}</td>
+        {/* <td>{originalAirDate}</td> */}
+
+        <Linkdata>
+          <Link href={`${SEARCH_ENDPOINT}${queryTitle}`} passHref>
+            <a target="_blank">VIEW</a>
+          </Link>
+        </Linkdata>
+        {/* <p>{desc}</p> */}
+        {/* <p>{id}</p> */}
+      </Card>
+    </>
   );
 };
 
-const Card = styled.div`
-  padding: 30px;
-  word-break: break-all;
-  background: #fc9918;
-  border-radius: 20px;
-  filter: grayscale(90%);
-  position: relative;
+const Card = styled.tr`
+  text-align: center;
 
-  &:hover {
-    filter: grayscale(0%);
-    transition-property: grayscale;
-    transition: ease-in-out all 0.5s;
+  td {
+    color: #8e6abd;
+    font-weight: 700;
+    font-size: 15px;
+  }
+`;
+
+const Linkdata = styled.td`
+  a {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    transition: ease-in-out 0.2s;
+  }
+
+  a: hover {
+    color: #0ea144;
+    background: #ffad2c;
   }
 `;
