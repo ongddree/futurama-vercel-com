@@ -129,7 +129,7 @@ const Desc = styled.article`
   h1 {
     color: transparent;
     overflow: hidden;
-    height: 28px;
+    height: 30px;
     & {
       color: #9440de;
       animation: ${typing} 3s steps(71);
@@ -183,14 +183,14 @@ const Btnwrap = styled.div`
     transform: translateX(-15%);
 
     svg {
-      color: #8a8cbf;
+      color: #ffad2c;
     }
   }
 
   button:nth-child(2):hover {
     transform: translateX(15%);
     svg {
-      color: #8a8cbf;
+      color: #ffad2c;
     }
   }
 `;
