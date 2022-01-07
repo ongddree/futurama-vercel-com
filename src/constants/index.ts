@@ -1,5 +1,7 @@
 export const API_ENDPOINT = "https://api.sampleapis.com/futurama/";
 
+export const SEARCH_ENDPOINT = "https://www.youtube.com/results?search_query=";
+
 export const ROUTES = [
   {
     ID: 0,
