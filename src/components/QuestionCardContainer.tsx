@@ -20,9 +20,11 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const answer = (e.target as HTMLInputElement).value;
+    const answerSec = document.getElementById("answerSec");
     if (answer === `${data[current].correctAnswer}`) {
-      alert("🥳정답입니다🥳");
-      setCurrent((current) => current + 1);
+      answerSec?.classList.add("next");
+      e.currentTarget.classList.add("correct");
+      setTimeout(() => setCurrent((current) => current + 1), 1000);
     } else {
       e.currentTarget.disabled = true;
     }
@@ -37,7 +39,7 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
           </Quiznumber>
           <Quiztext>{data[current].question}</Quiztext>
         </header>
-        <Answersection>
+        <Answersection id="answerSec">
           <button
             onClick={handleClick}
             value={data[current].possibleAnswers[0]}
@@ -71,18 +73,19 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
 const Container = styled.div`
   display: grid;
   place-items: center;
-  margin-top: 100px;
 `;
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px 20px;
-  color: #00000;
-  font-weight: 500;
+  padding: 40px 40px;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
   background: #fc9918;
-  max-width: 340px;
+  max-height: 400px;
+  max-width: 800px;
   border-radius: 20px;
 
   header {
@@ -105,21 +108,44 @@ const Quiztext = styled.div`
 const Answersection = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  &.next {
+    button {
+      cursor: not-allowed;
+      pointer-events: none;
+      color: #fc9918;
+      background: #fc9918;
+      cursor: not-allowed;
+      transition-property: background, color;
+      transition: ease-in-out all 0.3s;
+      &.correct {
+        background: #9440de;
+        color: #fff;
+        transition-property: background, color;
+        transition: ease-in-out all 0.3s;
+      }
+    }
+  }
+
   button {
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    background: #35589a;
-    font-size: 15px;
-    color: #ffffff;
-    width: 300px;
+    background: #0ea144;
+    color: #000;
+    font-size: 16px;
+    width: 100%;
     padding: 10px 0;
     margin: 5px 0;
   }
 
   button:disabled {
-    color: #808080;
+    color: #fc9918;
+    background: #fc9918;
     cursor: not-allowed;
-    filter: grayscale(80%);
-    transition-property: grayscale, color;
-    transition: ease-in-out all 0.4s;
+    transition-property: background, color;
+    transition: ease-in-out all 0.3s;
   }
 `;
