@@ -1,8 +1,7 @@
-import React from "react";
-styled;
-import { Navigation } from "./Navigations";
-import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
+import React from 'react';
+import { Navigation } from './Navigations';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
 export const Layout: React.FC = ({ children }) => {
   return (
@@ -28,13 +27,13 @@ const boxFade = keyframes`
 const Wrap = styled.div`
   position: relative;
   &:after {
-    content: "";
+    content: '';
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background: url("/assets/space_2.webp");
+    background: url('/assets/space_2.webp');
     z-index: 10;
   }
 `;

@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
-import { Error, Loading } from ".";
-import { useData } from "../hooks/useData";
-import { QuestionType } from "../types/QuestionType";
-import React, { useState } from "react";
+import styled from '@emotion/styled';
+import { Error, Loading } from '.';
+import { useData } from '../hooks/useData';
+import { QuestionType } from '../types/QuestionType';
+import React, { useState } from 'react';
 
 interface ContainerProps {
   subject: string;
@@ -20,10 +20,10 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const answer = (e.target as HTMLInputElement).value;
-    const answerSec = document.getElementById("answerSec");
+    const answerSec = document.getElementById('answerSec');
     if (answer === `${data[current].correctAnswer}`) {
-      answerSec?.classList.add("next");
-      e.currentTarget.classList.add("correct");
+      answerSec?.classList.add('next');
+      e.currentTarget.classList.add('correct');
       setTimeout(() => setCurrent((current) => current + 1), 1000);
     } else {
       e.currentTarget.disabled = true;
@@ -70,12 +70,12 @@ export const QuestionCardContainer = ({ subject }: ContainerProps) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   display: grid;
   place-items: center;
 `;
 
-const Card = styled.div`
+const Card = styled.article`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -105,7 +105,7 @@ const Quiztext = styled.div`
   margin: 0 0 20px;
 `;
 
-const Answersection = styled.div`
+const Answersection = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;

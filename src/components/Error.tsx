@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
 export const Error = () => {
   return (
@@ -13,25 +13,14 @@ export const Error = () => {
   );
 };
 
-const textChange = keyframes`
-0% { color: #ff2a2a; }
-15% { color: #ff7a2a; }
-30% { color: #ffc52a; }
-45% { color: #43ff2a; }
-60% { color: #2a89ff; }
-75% { color: #202082; }
-90% { color: #6b2aff; } 
-100% { color: #e82aff; }`;
+const errorTextChange = keyframes`
+ to {
+  color:#16a9d7;
+ }
 
-const colorChange = keyframes`
-  0% { filter: hue-rotate(30deg); }
-  15% { filter: hue-rotate(190deg); }
-  30% { filter: hue-rotate(90deg);}
-  45% {filter: hue-rotate(140deg); }
-  60% {filter: hue-rotate(120deg); }
-  75% { filter: hue-rotate(280deg); }
-  90% { filter: hue-rotate(50deg); } 
-  100% {filter: hue-rotate(150deg); }
+ from {
+   color: #952323;
+ }
 `;
 
 const Container = styled.div`
@@ -51,9 +40,8 @@ const Title = styled.h3`
   top: 25%;
   left: 50%;
   transform: translate(-50%, 0);
-
   font-size: 60px;
-  animation: ${textChange} 3s infinite;
+  animation: ${errorTextChange} 1s infinite;
   animation-direction: alternate;
   margin-bottom: 0;
 `;
@@ -65,11 +53,12 @@ const Desc = styled.p`
   background: #ffad2c;
   padding: 8px 12px;
   border-radius: 15px;
+  background: #afc0c9;
 `;
 
 const Errorimg = styled.img`
   display: block;
   height: 300px;
-  animation: ${colorChange} 3s infinite;
   animation-direction: alternate;
+  filter: drop-shadow(16px 16px 20px purple) invert(75%);
 `;

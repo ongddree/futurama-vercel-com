@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
-import { Error, Loading, CharacterCard } from ".";
-import { useData } from "../hooks/useData";
-import { CharacterType } from "../types/CharacterType";
-import React, { useState } from "react";
-import { keyframes } from "@emotion/react";
+import styled from '@emotion/styled';
+import { Error, Loading } from '.';
+import { useData } from '../hooks/useData';
+import { CharacterType } from '../types/CharacterType';
+import React, { useState } from 'react';
+import { keyframes } from '@emotion/react';
 import {
   faAngleDoubleRight,
   faAngleDoubleLeft,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface ContainerProps {
   subject: string;
@@ -50,10 +50,10 @@ export const CharacterCardContainer = ({ subject }: ContainerProps) => {
         <Profile src={data[current].images.main} alt="" />
 
         <Desc>
-          <h1>
-            {data[current].name.first} {data[current].name.middle}{" "}
+          <h3>
+            {data[current].name.first} {data[current].name.middle}{' '}
             {data[current].name.last}
-          </h1>
+          </h3>
           <p>Home Planet : {data[current].homePlanet}</p>
           <p>Age : {data[current].age}</p>
           <p>Gender : {data[current].gender}</p>
@@ -79,15 +79,6 @@ export const CharacterCardContainer = ({ subject }: ContainerProps) => {
 };
 
 const colorChange = keyframes`
-  // 0% { filter: hue-rotate(30deg);}
-  // 15% { filter: hue-rotate(70deg); }
-  // 30% { filter: hue-rotate(100deg);}
-  // 45% {filter: hue-rotate(140deg); }
-  // 60% {filter: hue-rotate(190deg); }
-  // 75% { filter: hue-rotate(240deg); }
-  // 90% { filter: hue-rotate(300deg); } 
-  // 100% {filter: hue-rotate(330deg); }
-
   0% { filter: hue-rotate(30deg); }
   15% { filter: hue-rotate(190deg); }
   30% { filter: hue-rotate(90deg);}
@@ -107,7 +98,7 @@ const typing = keyframes`
   }
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   margin: 0 auto;
 `;
 
@@ -126,7 +117,7 @@ const Desc = styled.article`
   margin-top: 35px;
   color: #9440de;
 
-  h1 {
+  h3 {
     color: transparent;
     overflow: hidden;
     height: 30px;

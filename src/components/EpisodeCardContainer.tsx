@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { Error, Loading, EpisodeCard } from ".";
-import { useData } from "../hooks/useData";
-import { EpisodeType } from "../types/EpisodeType";
+import styled from '@emotion/styled';
+import { Error, Loading, EpisodeCard } from '.';
+import { useData } from '../hooks/useData';
+import { EpisodeType } from '../types/EpisodeType';
 
 interface ContainerProps {
   subject: string;
@@ -39,7 +39,7 @@ export const EpisodeCardContainer = ({ subject }: ContainerProps) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.section`
   overflow: scroll;
   overflow-x: hidden;
   height: 400px;
@@ -74,7 +74,8 @@ const Container = styled.div`
 `;
 
 const Table = styled.table`
-  margin-top: 20px;
+  margin: 20px auto 0;
+  width: 90%;
   th {
     color: #9440de;
     text-transform: capitalize;

@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { EpisodeType } from "../types/EpisodeType";
-import Link from "next/link";
-import { SEARCH_ENDPOINT } from "../constants";
+import styled from '@emotion/styled';
+import { EpisodeType } from '../types/EpisodeType';
+import Link from 'next/link';
+import { SEARCH_ENDPOINT } from '../constants';
 
 interface EpisodeCardProps {
   episodeData: EpisodeType;
@@ -10,7 +10,7 @@ interface EpisodeCardProps {
 export const EpisodeCard = ({ episodeData }: EpisodeCardProps) => {
   const { number, title, writers, originalAirDate, desc, id } = episodeData;
 
-  const queryTitle = title.replaceAll(" ", "+");
+  const queryTitle = title.replaceAll(' ', '+');
 
   return (
     <>
