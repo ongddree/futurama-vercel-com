@@ -11,7 +11,6 @@ interface ContainerProps {
 
 export const InventoryCardContainer = ({ subject }: ContainerProps) => {
   const { data, error } = useData(subject);
-
   const [keyword, setKeyword] = useState('');
 
   const onSearch = (event: React.FormEvent<HTMLInputElement>) => {
