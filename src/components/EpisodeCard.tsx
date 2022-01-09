@@ -18,15 +18,12 @@ export const EpisodeCard = ({ episodeData }: EpisodeCardProps) => {
         <td>{number}</td>
         <td>{title}</td>
         <td>{writers}</td>
-        {/* <td>{originalAirDate}</td> */}
 
         <Linkdata>
           <Link href={`${SEARCH_ENDPOINT}${queryTitle}`} passHref>
             <a target="_blank">VIEW</a>
           </Link>
         </Linkdata>
-        {/* <p>{desc}</p> */}
-        {/* <p>{id}</p> */}
       </Card>
     </>
   );

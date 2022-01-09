@@ -20,7 +20,7 @@ export const InventoryCardContainer = (
   const { data, error } = useData(subject);
   const [keyword, setKeyword] = useState('');
 
-  const onSearch = (event: React.FormEvent<HTMLInputElement>) => {
+  const handleSearch = (event: React.FormEvent<HTMLInputElement>) => {
     const keyword = (event.target as HTMLInputElement).value;
     console.log(keyword);
     setKeyword(keyword);
@@ -37,7 +37,7 @@ export const InventoryCardContainer = (
           <input
             type="text"
             id="search"
-            onChange={onSearch}
+            onChange={handleSearch}
             placeholder="search anything"
           />
         </fieldset>
