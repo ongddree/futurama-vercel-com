@@ -9,7 +9,14 @@ interface ContainerProps {
   subject: string;
 }
 
-export const InventoryCardContainer = ({ subject }: ContainerProps) => {
+interface InventoryCardProps {
+  value: InventoryType;
+}
+
+export const InventoryCardContainer = (
+  { subject }: ContainerProps,
+  { value }: InventoryCardProps
+) => {
   const { data, error } = useData(subject);
   const [keyword, setKeyword] = useState('');
 
@@ -46,7 +53,7 @@ export const InventoryCardContainer = ({ subject }: ContainerProps) => {
         </thead>
         <tbody>
           {data
-            .filter((value: string) => {
+            .filter((value: InventoryType) => {
               if (keyword == '') {
                 return value;
               } else if (
